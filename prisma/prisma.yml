@@ -1,0 +1,13 @@
+endpoint: https://us1.prisma.sh/munir-ahmed/monest/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ../src/prisma
+
+hooks:
+  post-deploy:
+    - prisma generate
+
+seed:
+  import: seed.graphql
